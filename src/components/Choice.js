@@ -38,11 +38,11 @@ export const Choice = (props) => {
           <img src={srcImageUser} alt={srcImageUser} />
         </button>
       ) : props.origin === "consequence" ? (
-        <button>
+        <button className="result-big">
           <img src={srcImageUser} alt={srcImageUser} />
         </button>
       ) : (
-        <button>
+        <button className="result-big">
           <img src={srcImageComp} alt={srcImageComp} />
         </button>
       )}

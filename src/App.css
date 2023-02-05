@@ -2,14 +2,24 @@ body{
     background-color: hsl(214, 47%, 23%);
     color: white;
     overflow: hidden;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 .proLogo-container{
-    display:flex;
-    justify-content: space-around;
+    width: 40%;
+    right: 30%;
+    position: relative;
+    left: 30%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
-    margin-bottom:200px;
+    margin-top: 1%;
+    border-radius: 10px;
+    border: 2px solid ghostwhite;
+    margin-bottom: 5%;
+    padding-left:4px;
+    padding-right:4px;
 }
 
 .score{
@@ -52,12 +62,26 @@ body{
     border-radius: 100%;
     padding:10px;
 }
+
 .result-row-1 div:nth-child(1) button{
-    border: 10px solid green;
+    border: 20px solid green;
 }
-.result-row-1 div:nth-child(2) button{
-    border: 10px solid red;
+
+.result-row-1 div:nth-child(3) button{
+    border: 20px solid red;
+ }
+ /*
+.result-big img{
+    width: 68%;
+    height: auto;
 }
+.result-big{
+    width: 200%;
+    height: 200%;   
+}
+.result-span{
+    
+}*/ 
 .row-1 button{
     border: 10px solid green;
 }
@@ -83,39 +107,22 @@ body{
     height: 100%;
 }
 
-#rules-button{
+#rules-button,#play-again{
     display: flex;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
     justify-content: center;
-    width:100px;
+    width: 100px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 20px;
+    background-color: hsl(214, 47%, 23%);
 }
-/* 
-.nonPro:nth-child(1){
-    transform: translate(-160px);
+#result{
+    font-size: 30px;
 }
-.nonPro:nth-child(2){
-    transform: rotate(-23deg) translate(253px) rotate(23deg);
+.result-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
-.nonPro:nth-child(3){
-    transform: translate(53px);
-}
-
-.Pro:nth-child(1) {
-    transform: translate(-160px);
- }
- 
- .Pro:nth-child(2) {
-    transform:rotate(-75deg) translate(253px) rotate(75deg);
- }
- 
- .Pro:nth-child(3) {
-    transform: rotate(-32deg) translate(364px) rotate(36deg);
- }
- 
- .Pro:nth-child(4) {
-    transform: rotate(-9deg) translate(310px) rotate(15deg);
- }
- 
- .Pro:nth-child(5) {
-    transform: rotate(42deg) translate(-197px) rotate(-22deg);
- }
-  */

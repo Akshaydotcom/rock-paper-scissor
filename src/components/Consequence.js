@@ -6,7 +6,7 @@ export const Consequence = (props) => {
   const [pcChoice, setPcChoice] = React.useState(10);
   const [pcChoiceToSent, setPcChoiceToSent] = React.useState("");
   const [result, setResult] = React.useState("");
-  
+
   React.useEffect(() => {
     letHouseChoose();
   }, []);
@@ -16,31 +16,30 @@ export const Consequence = (props) => {
    */
   React.useEffect(() => {
     if (pcChoice !== 10) {
-    let score = props.score;
+      let score = props.score;
       if (pcChoice === 0) {
         //pcChoice is rock
         setPcChoiceToSent("rock");
         if (props.choice === "scissors" || props.choice === "lizard") {
           setResult("The House wins");
-          score-=1;
-        } else if(props.choice=="rock"){
-            setResult("Draw");
-        }
-        else {
+          score -= 1;
+        } else if (props.choice == "rock") {
+          setResult("Draw");
+        } else {
           setResult("You Win");
-          score+=1;
+          score += 1;
         }
       } else if (pcChoice === 1) {
         //pcChoice is Paper
         setPcChoiceToSent("paper");
         if (props.choice === "rock" || props.choice === "spock") {
           setResult("The House wins");
-          score-=1;
-        } else if(props.choice=="paper"){
-            setResult("Draw");
-        }else {
+          score -= 1;
+        } else if (props.choice == "paper") {
+          setResult("Draw");
+        } else {
           setResult("You Win");
-          score+=1;
+          score += 1;
         }
       } else if (pcChoice === 2) {
         //pcChoice is scissors
@@ -48,50 +47,60 @@ export const Consequence = (props) => {
         if (props.choice === "paper" || props.choice === "lizard") {
           //user choice
           setResult("The House wins");
-          score-=1;
-        } else if(props.choice=="scissors"){
-            setResult("Draw");
-        }else {
+          score -= 1;
+        } else if (props.choice == "scissors") {
+          setResult("Draw");
+        } else {
           setResult("You Win");
-          score+=1;
+          score += 1;
         }
       } else if (pcChoice === 3) {
         //pcChoice is lizard
         setPcChoiceToSent("lizard");
         if (props.choice === "paper" || props.choice === "spock") {
           setResult("The House wins");
-          score-=1;
-        } else if(props.choice=="lizard"){
-            setResult("Draw");
-        }else {
+          score -= 1;
+        } else if (props.choice == "lizard") {
+          setResult("Draw");
+        } else {
           setResult("You Win");
-          score+=1;
+          score += 1;
         }
       } else {
         //pcChoice is spock
         setPcChoiceToSent("spock");
         if (props.choice === "scissors" || props.choice === "rock") {
           setResult("The House wins");
-          score-=1;
-        } else if(props.choice=="spock"){
-            setResult("Draw");
-        }else {
+          score -= 1;
+        } else if (props.choice == "spock") {
+          setResult("Draw");
+        } else {
           setResult("You Win");
-          score+=1;
+          score += 1;
         }
       }
-      props.getScore(score)
+      props.getScore(score);
       //localStorage.setItem('scoreOfRPS',score)
     }
-    
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pcChoice, props.pcChoice]);
-  //Saving Score to localSTorage
-  const letHouseChoose=()=>{
+
+  React.useEffect(() => {
+    if (result == "You Win") {
+        //add animation to left image with white circles
+    }
+    else if(result == "The House wins"){
+        //add animation to right image with white circles
+    }
+  }, [result]);
+
+  const letHouseChoose = () => {
     props.proMode
       ? setPcChoice(Math.floor(Math.random() * 5))
       : setPcChoice(Math.floor(Math.random() * 3));
-  }
+  };
+
   const resetChoice = () => {
     props.setChoice("");
   };
@@ -100,19 +109,21 @@ export const Consequence = (props) => {
     <div className="result-main">
       <div className="result-row-1">
         <div>
+          <span className="result-span">You Chose</span>
           {props.choice && (
             <Choice choice={props.choice} origin={"consequence"} />
           )}
-          <span>You Chose</span>
+        </div>
+        <div className="result-div">
+          <div id="result">{result}</div>
+          <button id="play-again" onClick={resetChoice}>
+            PLAY AGAIN
+          </button>
         </div>
         <div>
+          <span className="result-span">The House Chose</span>
           {<Choice pcChoice={pcChoiceToSent} />}
-          <span>The House Chose</span>
         </div>
-      </div>
-      <div className="result-row-2">
-        <span id="result">{result}</span>
-        <button onClick={resetChoice}>play again</button>
       </div>
     </div>
   );
