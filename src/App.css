@@ -16,9 +16,34 @@ body{
     font-size: 55px;
     margin: 20px 0px 20px 0px;
 }
-
+.result-row-1{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 45px;
+}
+.result-row-2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+.row-1{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.row-2,.row-3{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.action-main{
+    width: 40%;
+    left: 30%;
+    right: 30%;
+    position: relative;
+}
 .actions-container{
-    display:grid;
+    /* display:grid; */
     justify-content: center;
     height: 100px;
 }
@@ -27,6 +52,7 @@ body{
     border-radius: 100%;
     padding:10px;
 }
+/*
 .actions-container:nth-child(1) button{
     border: 10px solid green;
 }
@@ -44,7 +70,7 @@ body{
 
 .actions-container:nth-child(5) button{
     border: 10px solid turquoise;
-}
+} */
 .rules-container{
     margin: 25px 0 0 0;
     display:grid;
@@ -57,7 +83,7 @@ body{
     justify-content: center;
     width:100px;
 }
-
+/* 
 .nonPro:nth-child(1){
     transform: translate(-160px);
 }
@@ -87,4 +113,4 @@ body{
  .Pro:nth-child(5) {
     transform: rotate(42deg) translate(-197px) rotate(-22deg);
  }
- 
+  */
