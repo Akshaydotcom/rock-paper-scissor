@@ -8,6 +8,14 @@ export const Choice = (props) =>{
     const setChoice = () =>{
         props.setChoice(props.choice)
     }
+    const[proMode,setProMode]=React.useState('');
+    React.useEffect(()=>{
+        if(props.proMode){
+            setProMode('Pro')
+        }else{
+            setProMode('nonPro')
+        }
+    },[props.proMode])
     let srcImageUser
     let srcImageComp
     if(props.choice==='lizard') srcImageUser=lizard
@@ -21,9 +29,10 @@ export const Choice = (props) =>{
     else if(props.pcChoice==='rock') srcImageComp=rock
     else if(props.pcChoice==='scissors') srcImageComp=scissors
     else if(props.pcChoice==='spock') srcImageComp=spock
+    
     //if coming from Action, button should have onClick, if coming from consequence, button should not have onClick and Button should be bigger  
     return(
-        <div className='actions-container'>
+        <div className={`actions-container ${proMode}`}>
             {props.origin==='action'?<button onClick={setChoice}>
                 <img src={srcImageUser} alt={srcImageUser} />
             </button>:props.origin==='consequence'?<button><img src={srcImageUser} alt={srcImageUser} /></button>:<button><img src={srcImageComp} alt={srcImageComp} /></button>
