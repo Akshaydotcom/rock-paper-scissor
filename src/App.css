@@ -52,25 +52,30 @@ body{
     border-radius: 100%;
     padding:10px;
 }
-/*
-.actions-container:nth-child(1) button{
+.result-row-1 div:nth-child(1) button{
+    border: 10px solid green;
+}
+.result-row-1 div:nth-child(2) button{
+    border: 10px solid red;
+}
+.row-1 button{
     border: 10px solid green;
 }
 
-.actions-container:nth-child(2) button{
+.row-2 .actions-container:nth-child(1) button{
     border: 10px solid red;
 }
 
-.actions-container:nth-child(3) button{
+.row-2 .actions-container:nth-child(2) button{
     border: 10px solid yellow;
 }
-.actions-container:nth-child(4) button{
+.row-3 .actions-container:nth-child(1) button{
     border: 10px solid blueviolet;
 }
 
-.actions-container:nth-child(5) button{
+.row-3 .actions-container:nth-child(2) button{
     border: 10px solid turquoise;
-} */
+} 
 .rules-container{
     margin: 25px 0 0 0;
     display:grid;

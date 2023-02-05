@@ -8,10 +8,8 @@ export const Consequence = (props) => {
   const [result, setResult] = React.useState("");
   
   React.useEffect(() => {
-    props.proMode
-      ? setPcChoice(Math.floor(Math.random() * 5))
-      : setPcChoice(Math.floor(Math.random() * 3));
-  }, [props.proMode]);
+    letHouseChoose();
+  }, []);
 
   //Calculation Pending
   /*        Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and, as it always has, rock crushes scissors
@@ -86,9 +84,14 @@ export const Consequence = (props) => {
       //localStorage.setItem('scoreOfRPS',score)
     }
     
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pcChoice, props.pcChoice]);
   //Saving Score to localSTorage
-
+  const letHouseChoose=()=>{
+    props.proMode
+      ? setPcChoice(Math.floor(Math.random() * 5))
+      : setPcChoice(Math.floor(Math.random() * 3));
+  }
   const resetChoice = () => {
     props.setChoice("");
   };

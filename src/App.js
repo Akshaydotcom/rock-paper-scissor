@@ -9,6 +9,7 @@ function App() {
   // let score=sessionStorage.getItem('scoreOfRPS')!==null||sessionStorage.getItem('scoreOfRPS')!=="0"?Number(sessionStorage.getItem('scoreOfRPS')):0
   // if(score!==0)sessionStorage.setItem('scoreOfRPS',score)
   // else if (isNaN(score))sessionStorage.setItem('scoreOfRPS','0')
+  
   const [score, setScore] = React.useState(0);
   const [rulesClicked, setRulesClicked] = React.useState(false);
   const [choice, setChoice] = React.useState();
