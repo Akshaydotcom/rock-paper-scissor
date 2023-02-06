@@ -1,7 +1,6 @@
 body{
     background-color: hsl(214, 47%, 23%);
     color: white;
-    overflow: hidden;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
@@ -133,4 +132,26 @@ body{
     color: white;
     border: none;
     font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+@media screen and (max-width:600px) {
+    .proLogo-container{
+        position:static;
+        width:auto;
+    }
+    .result-row-1 div:nth-child(1) button{
+        border: 10px solid green;
+        margin-right:10px;
+    }
+    
+    .result-row-1 div:nth-child(3) button{
+        border: 10px solid red;
+        margin-left:10px;
+    }
+    .result-row-1 div:nth-child(3) span{
+        white-space: nowrap;
+    }
+    .rules-close{
+        position: static;
+    }
 }
