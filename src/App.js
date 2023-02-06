@@ -1,15 +1,15 @@
 import React from "react";
 import { Header } from "./components/Header";
-import { Rules } from "./components/Rules";
 import { Action } from "./components/Action";
 import { Consequence } from "./components/Consequence";
 import "./App.css";
+import { NewWindow } from "./components/NewWindow";
 
 function App() {
   // let score=sessionStorage.getItem('scoreOfRPS')!==null||sessionStorage.getItem('scoreOfRPS')!=="0"?Number(sessionStorage.getItem('scoreOfRPS')):0
   // if(score!==0)sessionStorage.setItem('scoreOfRPS',score)
   // else if (isNaN(score))sessionStorage.setItem('scoreOfRPS','0')
-  
+
   const [score, setScore] = React.useState(0);
   const [rulesClicked, setRulesClicked] = React.useState(false);
   const [choice, setChoice] = React.useState();
@@ -18,10 +18,14 @@ function App() {
     rulesClicked ? setRulesClicked(false) : setRulesClicked(true);
   };
   const enableProMode = () => {
+    setChoice("")
     proMode ? setProMode(false) : setProMode(true);
   };
   const getScore = (data) => {
     setScore(data);
+  };
+  const onClose = (data) => {
+    setRulesClicked(data);
   };
   return (
     <div className="App">
@@ -42,7 +46,10 @@ function App() {
           Rules
         </button>
       </div>
-      {rulesClicked && <Rules proMode={proMode} />}
+      {rulesClicked && (
+        <NewWindow proMode={proMode} onClose={onClose}></NewWindow>
+      )}
+      {/* {rulesClicked && <Rules proMode={proMode} onClose={onClose}/>} */}
     </div>
   );
 }

@@ -102,9 +102,8 @@ body{
 } 
 .rules-container{
     margin: 25px 0 0 0;
-    display:grid;
+    display:flex;
     justify-content: center;
-    height: 100%;
 }
 
 #rules-button,#play-again{
@@ -125,4 +124,13 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+.rules-close{
+    height: 20px;
+    position: relative;
+    background-color: hsl(214, 47%, 23%);
+    left: 20px;
+    color: white;
+    border: none;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }

@@ -9,6 +9,7 @@ export const Consequence = (props) => {
 
   React.useEffect(() => {
     letHouseChoose();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //Calculation Pending
