@@ -25,6 +25,9 @@ function App() {
   const getScore = (data) => {
     setScore(data);
   };
+  const refreshScore=()=>{
+    setScore(0);
+  }
   const onClose = (data) => {
     setRulesClicked(data);
   };
@@ -47,6 +50,7 @@ function App() {
         <button onClick={openRules} id="rules-button">
           Rules
         </button>
+        <button id="rules-button" onClick={refreshScore}>Refresh Score</button>
       </div>
       {rulesClicked && (
         <NewWindow proMode={proMode} onClose={onClose}></NewWindow>

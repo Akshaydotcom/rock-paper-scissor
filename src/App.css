@@ -137,6 +137,7 @@ body{
     position: relative;
     transition: top 1s cubic-bezier(0.05, 1.56, 0.87, 1.72);
     top:-36px;
+    cursor: pointer;
 }
 .navbar div ul{
     padding-left:0px;
