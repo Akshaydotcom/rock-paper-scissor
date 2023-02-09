@@ -3,6 +3,9 @@ import { Rules } from "./Rules";
 
 const modalRoot = document.getElementById("modal-root");
 export const NewWindow = (props) => {
+  const close=()=>{
+    props.onClose(false)
+  }
   return ReactDom.createPortal(
     <div
       style={{
@@ -16,6 +19,7 @@ export const NewWindow = (props) => {
         alignItems: "center",
         backgroundColor: "rgba(15, 15, 15, 0.8)",
       }}
+      onClick={close}
     >
       <Rules props={props} />
     </div>,
