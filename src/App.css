@@ -133,6 +133,29 @@ body{
     border: none;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
+.navbar{
+    position: relative;
+    transition: top 1s cubic-bezier(0.05, 1.56, 0.87, 1.72);
+    top:-36px;
+}
+.navbar div ul{
+    padding-left:0px;
+    display: flex;
+}
+.navbar div ul li{
+    list-style-type: none;
+    padding-right:10px;
+}
+div.icon{
+    display: inline;
+    float: right;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown{
+    top:0px !important;
+}
 
 @media screen and (max-width:600px) {
     .proLogo-container{

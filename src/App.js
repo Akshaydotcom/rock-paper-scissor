@@ -4,6 +4,7 @@ import { Action } from "./components/Action";
 import { Consequence } from "./components/Consequence";
 import "./App.css";
 import { NewWindow } from "./components/NewWindow";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   // let score=sessionStorage.getItem('scoreOfRPS')!==null||sessionStorage.getItem('scoreOfRPS')!=="0"?Number(sessionStorage.getItem('scoreOfRPS')):0
@@ -29,6 +30,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Navbar proMode={proMode} enableProMode={enableProMode}/>
       <Header score={score} proMode={proMode} enableProMode={enableProMode} />
       {choice ? (
         <Consequence
