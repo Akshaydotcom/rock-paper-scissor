@@ -31,7 +31,8 @@ function App() {
     setScore(data);
   };
   const getResult=(data)=>{
-    setResult(data);
+    // setResult(data);
+    setResult([...result,data])
   }
   const refreshScore=()=>{
     setScore(0);
