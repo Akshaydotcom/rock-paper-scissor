@@ -5,12 +5,14 @@ import { Consequence } from "./components/Consequence";
 import "./App.css";
 import { NewWindow } from "./components/NewWindow";
 import { Navbar } from "./components/Navbar";
+import { History } from "./components/History";
 
 function App() {
   // let score=sessionStorage.getItem('scoreOfRPS')!==null||sessionStorage.getItem('scoreOfRPS')!=="0"?Number(sessionStorage.getItem('scoreOfRPS')):0
   // if(score!==0)sessionStorage.setItem('scoreOfRPS',score)
   // else if (isNaN(score))sessionStorage.setItem('scoreOfRPS','0')
-
+  const [result, setResult]=React.useState([])
+  const [showHistory, setHistory]=React.useState(false);
   const [score, setScore] = React.useState(0);
   const [rulesClicked, setRulesClicked] = React.useState(false);
   const [choice, setChoice] = React.useState();
@@ -22,9 +24,15 @@ function App() {
     setChoice("")
     proMode ? setProMode(false) : setProMode(true);
   };
+  const enableHistory=()=>{
+    showHistory ? setHistory(false) : setHistory(true);
+  }
   const getScore = (data) => {
     setScore(data);
   };
+  const getResult=(data)=>{
+    setResult(data);
+  }
   const refreshScore=()=>{
     setScore(0);
   }
@@ -33,7 +41,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Navbar proMode={proMode} enableProMode={enableProMode}/>
+      <Navbar proMode={proMode} enableProMode={enableProMode} enableHistory={enableHistory}/>
       <Header score={score} proMode={proMode} enableProMode={enableProMode} />
       {choice ? (
         <Consequence
@@ -42,6 +50,7 @@ function App() {
           setChoice={setChoice}
           proMode={proMode}
           score={score}
+          getResult={getResult}
         />
       ) : (
         <Action setChoice={setChoice} proMode={proMode} />
@@ -55,7 +64,7 @@ function App() {
       {rulesClicked && (
         <NewWindow proMode={proMode} onClose={onClose}></NewWindow>
       )}
-      {/* {rulesClicked && <Rules proMode={proMode} onClose={onClose}/>} */}
+      {showHistory && <History result={result}/>}
     </div>
   );
 }

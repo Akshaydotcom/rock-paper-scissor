@@ -15,7 +15,7 @@ export const Navbar = (props) => {
         <div>
           <ul>
             <li>Home</li>
-            <li>History</li>
+            <li onClick={props.enableHistory}>History</li>
             <li onClick={props.enableProMode}>
               {props.proMode ? "Normal Mode" : "Pro-Mode"}
             </li>

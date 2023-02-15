@@ -9,7 +9,7 @@ export const Consequence = (props) => {
 
   React.useEffect(() => {
     letHouseChoose();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //Calculation Pending
@@ -89,11 +89,11 @@ export const Consequence = (props) => {
 
   React.useEffect(() => {
     if (result == "You Win") {
-        //add animation to left image with white circles
+      //add animation to left image with white circles
+    } else if (result == "The House wins") {
+      //add animation to right image with white circles
     }
-    else if(result == "The House wins"){
-        //add animation to right image with white circles
-    }
+    result&&props.getResult([pcChoiceToSent, result, props.choice])
   }, [result]);
 
   const letHouseChoose = () => {
