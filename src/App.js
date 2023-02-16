@@ -65,7 +65,7 @@ function App() {
       {rulesClicked && (
         <NewWindow proMode={proMode} onClose={onClose}></NewWindow>
       )}
-      {showHistory && <History result={result}/>}
+      {showHistory && <History showHistory={showHistory} result={result}/>}
     </div>
   );
 }

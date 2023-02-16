@@ -158,6 +158,24 @@ div.icon{
     top:0px !important;
 }
 
+.sideNav{
+    position: fixed;
+    height: 100%;
+    width:0px;
+    top: 10%;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.sideNavInFrame{
+    width:20%!important;
+}
+
+.sideNavInFrame div{
+    transform: translateX(0%);
+    transition: transform 0.3s cubic-bezier(0.05, 1.56, 0.87, 1.72);
+}
+
 @media screen and (max-width:600px) {
     .proLogo-container{
         position:static;
