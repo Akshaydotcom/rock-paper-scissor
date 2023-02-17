@@ -17,9 +17,24 @@ function App() {
   const [rulesClicked, setRulesClicked] = React.useState(false);
   const [choice, setChoice] = React.useState();
   const [proMode, setProMode] = React.useState(false);
+  const [isFullScreen, setFullScreen]=React.useState(false);
+
+  
+  function enableFullScreen(){
+    var elem = document.documentElement;
+    if (document.fullscreenElement==null) {
+      elem.requestFullscreen();
+      setFullScreen(true)
+    }else{
+      document.exitFullscreen();
+      setFullScreen(false)
+    }
+  }
+  
   const openRules = () => {
     rulesClicked ? setRulesClicked(false) : setRulesClicked(true);
   };
+  
   const enableProMode = () => {
     setChoice("")
     proMode ? setProMode(false) : setProMode(true);
@@ -42,7 +57,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Navbar proMode={proMode} enableProMode={enableProMode} enableHistory={enableHistory} showHistory={showHistory}/>
+      <Navbar proMode={proMode} changeFullScreen={enableFullScreen} isFullScreen={isFullScreen} enableProMode={enableProMode} enableHistory={enableHistory} showHistory={showHistory}/>
       <Header score={score} proMode={proMode} enableProMode={enableProMode} />
       {choice ? (
         <Consequence

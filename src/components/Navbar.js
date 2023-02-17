@@ -14,6 +14,7 @@ export const Navbar = (props) => {
         <div>
           <ul>
             <li>Home</li>
+            <li onClick={props.changeFullScreen}>{props.isFullScreen?"Exit Full-Screen":"Enter Full-Screen"}</li>
             <li onClick={props.enableHistory}>{props.showHistory?"History On":"History Off"}</li>
             <li onClick={props.enableProMode}>
               {props.proMode ? "Normal Mode" : "Pro-Mode"}
