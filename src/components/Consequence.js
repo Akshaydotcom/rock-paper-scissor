@@ -22,24 +22,24 @@ export const Consequence = (props) => {
         //pcChoice is rock
         setPcChoiceToSent("rock");
         if (props.choice === "scissors" || props.choice === "lizard") {
-          setResult("The House wins");
+          setResult("You Lost");
           score -= 1;
         } else if (props.choice == "rock") {
           setResult("Draw");
         } else {
-          setResult("You Win");
+          setResult("You Won");
           score += 1;
         }
       } else if (pcChoice === 1) {
         //pcChoice is Paper
         setPcChoiceToSent("paper");
         if (props.choice === "rock" || props.choice === "spock") {
-          setResult("The House wins");
+          setResult("You Lost");
           score -= 1;
         } else if (props.choice == "paper") {
           setResult("Draw");
         } else {
-          setResult("You Win");
+          setResult("You Won");
           score += 1;
         }
       } else if (pcChoice === 2) {
@@ -47,36 +47,36 @@ export const Consequence = (props) => {
         setPcChoiceToSent("scissors");
         if (props.choice === "paper" || props.choice === "lizard") {
           //user choice
-          setResult("The House wins");
+          setResult("You Lost");
           score -= 1;
         } else if (props.choice == "scissors") {
           setResult("Draw");
         } else {
-          setResult("You Win");
+          setResult("You Won");
           score += 1;
         }
       } else if (pcChoice === 3) {
         //pcChoice is lizard
         setPcChoiceToSent("lizard");
         if (props.choice === "paper" || props.choice === "spock") {
-          setResult("The House wins");
+          setResult("You Lost");
           score -= 1;
         } else if (props.choice == "lizard") {
           setResult("Draw");
         } else {
-          setResult("You Win");
+          setResult("You Won");
           score += 1;
         }
       } else {
         //pcChoice is spock
         setPcChoiceToSent("spock");
         if (props.choice === "scissors" || props.choice === "rock") {
-          setResult("The House wins");
+          setResult("You Lost");
           score -= 1;
         } else if (props.choice == "spock") {
           setResult("Draw");
         } else {
-          setResult("You Win");
+          setResult("You Won");
           score += 1;
         }
       }
@@ -88,9 +88,9 @@ export const Consequence = (props) => {
   }, [pcChoice, props.pcChoice]);
 
   React.useEffect(() => {
-    if (result == "You Win") {
+    if (result == "You Won") {
       //add animation to left image with white circles
-    } else if (result == "The House wins") {
+    } else if (result == "You Lost") {
       //add animation to right image with white circles
     }
     result&&props.getResult([pcChoiceToSent, result, props.choice])
@@ -122,7 +122,7 @@ export const Consequence = (props) => {
           </button>
         </div>
         <div>
-          <span className="result-span">The House Chose</span>
+          <span className="result-span">PC Chose</span>
           {<Choice pcChoice={pcChoiceToSent} />}
         </div>
       </div>

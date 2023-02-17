@@ -77,10 +77,10 @@ body{
 .result-big{
     width: 200%;
     height: 200%;   
-}
+}*/
 .result-span{
-    
-}*/ 
+    font-size: 30px;    
+}
 .row-1 button{
     border: 10px solid green;
 }

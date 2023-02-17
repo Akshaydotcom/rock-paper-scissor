@@ -42,7 +42,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Navbar proMode={proMode} enableProMode={enableProMode} enableHistory={enableHistory}/>
+      <Navbar proMode={proMode} enableProMode={enableProMode} enableHistory={enableHistory} showHistory={showHistory}/>
       <Header score={score} proMode={proMode} enableProMode={enableProMode} />
       {choice ? (
         <Consequence
