@@ -158,7 +158,9 @@ div.icon{
 .dropdown{
     top:0px !important;
 }
-
+.dropdown img{
+    height:20px;
+}
 .sideNav{
     position: fixed;
     height: 100%;
@@ -169,7 +171,7 @@ div.icon{
 }
 
 .sideNavInFrame{
-    width:20%!important;
+    width:18%!important;
 }
 
 .sideNavInFrame div{

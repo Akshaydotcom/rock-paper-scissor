@@ -4,6 +4,7 @@ export const History = (props) => {
   const [results, setResults] = React.useState([]);
 
   React.useEffect(() => {
+    //first is Pc choice, second is result, thord is user choice
     setResults(props.result);
   }, [props.result]);
 

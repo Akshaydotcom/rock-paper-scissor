@@ -93,7 +93,7 @@ export const Consequence = (props) => {
     } else if (result == "You Lost") {
       //add animation to right image with white circles
     }
-    result&&props.getResult([pcChoiceToSent, result, props.choice])
+    result&&props.getResult('You Chose '+props.choice+' PC Chose '+pcChoiceToSent+' Result: '+result);
   }, [result]);
 
   const letHouseChoose = () => {
