@@ -46,7 +46,6 @@ function App() {
     setScore(data);
   };
   const getResult=(data)=>{
-    console.log(data);
     setResult([...result,data])
   }
   const refreshScore=()=>{
