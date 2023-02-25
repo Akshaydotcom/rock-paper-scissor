@@ -3,7 +3,6 @@ import logo from '../images/joystick.png'
 export const Navbar = (props) => {
     const [mobileDevice, setMobileDevice]=React.useState(false);
     React.useEffect(()=>{
-      console.log(navigator.userAgentData.platform);
       if (navigator.userAgentData.platform=='Android'||navigator.userAgentData.platform=='iPhone'){
         setMobileDevice(true)
       }
