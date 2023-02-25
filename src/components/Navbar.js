@@ -1,10 +1,13 @@
 import React from "react";
 import logo from '../images/joystick.png'
 export const Navbar = (props) => {
-    // const [navBar, setNavBar]=React.useState(false);
-    // const showNavBar=()=>{
-    //     navBar?setNavBar(false):setNavBar(true)
-    // }
+    const [mobileDevice, setMobileDevice]=React.useState(false);
+    React.useEffect(()=>{
+      console.log(navigator.userAgentData.platform);
+      if (navigator.userAgentData.platform=='Android'||navigator.userAgentData.platform=='iPhone'){
+        setMobileDevice(true)
+      }
+    },[])
   return (
     <>
       {/* <div className="icon">
@@ -15,7 +18,7 @@ export const Navbar = (props) => {
           <ul>
             <li><img src={logo} alt={logo} /></li>
             <li onClick={props.changeFullScreen}>{props.isFullScreen?"Exit Full-Screen":"Enter Full-Screen"}</li>
-            <li onClick={props.enableHistory}>{props.showHistory?"History On":"History Off"}</li>
+            {!mobileDevice&&<li onClick={props.enableHistory}>{props.showHistory?"History On":"History Off"}</li>}
             <li onClick={props.enableProMode}>
               {props.proMode ? "Normal Mode" : "Pro-Mode"}
             </li>
