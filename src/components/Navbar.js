@@ -2,11 +2,11 @@ import React from "react";
 import logo from '../images/joystick.png'
 export const Navbar = (props) => {
     const [mobileDevice, setMobileDevice]=React.useState(false);
-    React.useEffect(()=>{
-      if (navigator.userAgentData.platform=='Android'||navigator.userAgentData.platform=='iPhone'){
-        setMobileDevice(true)
-      }
-    },[])
+    // React.useEffect(()=>{
+    //   if (navigator.userAgentData.platform=='Android'||navigator.userAgentData.platform=='iPhone'){
+    //     setMobileDevice(true)
+    //   }
+    // },[])
   return (
     <>
       {/* <div className="icon">
